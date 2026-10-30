@@ -1,4 +1,4 @@
-// Cancel Kit (plan-013): free-trial reminder. Makes a calendar file that reminds you 2 days before a trial turns paid.
+// Kit Cancel (plan-013): free-trial reminder. Makes a calendar file that reminds you 2 days before a trial turns paid.
 // Pure functions on top, browser wiring below.
 const CRLF = String.fromCharCode(13, 10);
 
@@ -16,9 +16,9 @@ function ics(service, endDate, now) {
   const stamp = now.toISOString().split('-').join('').split(':').join('').slice(0, 15) + 'Z';
   const title = 'Cancel ' + service + ' before the free trial ends';
   return [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Cancel Kit//Trial reminder//EN',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Kit Cancel//Trial reminder//EN',
     'BEGIN:VEVENT',
-    'UID:' + ymd(endDate) + '-' + service.toLowerCase().split(' ').join('-') + '@cancelkit',
+    'UID:' + ymd(endDate) + '-' + service.toLowerCase().split(' ').join('-') + '@kitcancel',
     'DTSTAMP:' + stamp,
     'DTSTART;VALUE=DATE:' + ymd(remind),
     'DTEND;VALUE=DATE:' + ymd(next),

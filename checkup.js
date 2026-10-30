@@ -1,4 +1,4 @@
-// Cancel Kit (plan-013): the free subscription check-up. Tick what you pay for, see how to leave each one.
+// Kit Cancel (plan-013): the free subscription check-up. Tick what you pay for, see how to leave each one.
 // Pure functions on top, browser wiring below.
 const SERVICES = [
   { name: 'Planet Fitness', guide: 'cancel-planet-fitness.html' },

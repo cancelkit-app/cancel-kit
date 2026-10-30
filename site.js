@@ -1,4 +1,4 @@
-// Cancel Kit (plan-013): the Help button on every page, its quick answers, and the copy-letter button.
+// Kit Cancel (plan-013): the Help button on every page, its quick answers, and the copy-letter button.
 // Pure functions on top, browser wiring below.
 const FAQ = [
   { words: ['password', 'login', 'log', 'sign'], text: 'Never. We need your name, the email on the account and your signed permission. We never ask for passwords or card numbers.' },

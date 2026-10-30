@@ -1,4 +1,4 @@
-/* Cancel Kit look, part 1 of 2. style.css imports this after layout.css. */
+/* Kit Cancel look, part 1 of 2. style.css imports this after layout.css. */
 :root { --green: #b07d4f; --green-dark: #8a5f37; --blue: #1cb0f6; --blue-dark: #1899d6; --ink: #4b4b4b; --muted: #777; --line: #e5e5e5; --red: #ff4b4b; --gold: #ffc800; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Nunito, Arial, sans-serif; color: var(--ink); background: #fff; font-size: 18px; line-height: 1.5; }

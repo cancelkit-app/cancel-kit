@@ -1,4 +1,4 @@
-/* Cancel Kit look, part 2 of 2. style.css imports this after look-1.css. */
+/* Kit Cancel look, part 2 of 2. style.css imports this after look-1.css. */
 .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
 .check input { width: 24px; height: 24px; flex: none; }
 .error { color: var(--red); font-weight: 800; min-height: 27px; }

@@ -1,4 +1,4 @@
-// Cancel Kit (plan-013): the office's case tracker.
+// Kit Cancel (plan-013): the office's case tracker.
 // Every case, its follow-ups on day 3, 7 and 14 after sending, a refund due on day 30 after payment,
 // and a check the day after the customer's next bill date that they were not charged again.
 //   node cases.js due [cases.json]

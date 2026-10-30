@@ -1,4 +1,4 @@
-// Cancel Kit (plan-013): the 3-step "lesson" form. Pure functions on top, browser wiring below.
+// Kit Cancel (plan-013): the 3-step "lesson" form. Pure functions on top, browser wiring below.
 const PAYMENT_LINK = 'https://buy.stripe.com/test_3cI9AU3pM5QhfKff5xgw000';
 const STEPS = 3;
 
@@ -31,7 +31,7 @@ function storeOnly(d) {
 
 function authorizationText(d) {
   const company = d.company || '[company]';
-  return 'I, ' + (d.name || '[your name]') + ', authorize Cancel Kit to request the cancellation of my ' +
+  return 'I, ' + (d.name || '[your name]') + ', authorize Kit Cancel to request the cancellation of my ' +
     company + ' subscription on my behalf, and to follow up with ' + company +
     ' until the cancellation is confirmed in writing.';
 }

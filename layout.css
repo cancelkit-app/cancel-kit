@@ -1,4 +1,4 @@
-/* Cancel Kit (plan-013): the layout follows the device. Phone first, then laptop.
+/* Kit Cancel (plan-013): the layout follows the device. Phone first, then laptop.
    style.css imports this file first, so every rule starts with "html body" to win over it. */
 
 /* Phone: logo and Start on the first row, the menu links on the second, instead of hiding them */
