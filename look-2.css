@@ -1,0 +1,44 @@
+/* Cancel Kit look, part 2 of 2. style.css imports this after look-1.css. */
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
+.check input { width: 24px; height: 24px; flex: none; }
+.error { color: var(--red); font-weight: 800; min-height: 27px; }
+.row { display: flex; gap: 12px; margin-top: 24px; }
+.row .btn { flex: 1; }
+
+.celebrate { text-align: center; padding: 40px 0; }
+.badge { display: inline-block; background: var(--gold); color: #fff; font-weight: 900; border-radius: 12px; padding: 6px 14px; box-shadow: 0 4px 0 #e5a000; }
+
+.guide h2 { margin-top: 28px; }
+.steps li, .tips li { margin: 8px 0; }
+.quick { background: #fbf6f0; border-color: #e8d3b5; }
+.letter { border: 2px dashed #e8d3b5; border-radius: 16px; padding: 4px 20px; background: #fffdf9; font-family: Georgia, serif; font-size: 16px; }
+.cta { text-align: center; }
+.small a { color: var(--blue); font-weight: 800; text-decoration: none; }
+.guide-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.guide-list a { display: block; border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; font-weight: 800; color: var(--ink); text-decoration: none; box-shadow: 0 4px 0 var(--line); }
+.guide-list a:hover { border-color: var(--green); color: var(--green); }
+
+.helper { position: fixed; right: 16px; bottom: 16px; z-index: 20; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.helper-open { padding: 12px 20px; }
+.helper-panel { width: min(340px, calc(100vw - 32px)); background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+.helper-title { font-weight: 900; margin: 0 0 8px; }
+.helper-log { max-height: 240px; overflow-y: auto; font-size: 16px; }
+.helper-log p { margin: 6px 0; padding: 8px 12px; border-radius: 12px; }
+.helper-log .me { background: #f7f7f7; margin-left: 32px; }
+.helper-log .bot { background: #fbf6f0; margin-right: 32px; }
+.helper-ask { display: flex; gap: 8px; }
+.helper-ask .btn { padding: 10px 16px; }
+.copy { margin-top: 12px; }
+.sent { background: #fbf6f0; border-color: #e8d3b5; font-weight: 800; }
+
+.ticks { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px 16px; margin: 16px 0; }
+.tick { display: flex; align-items: center; justify-content: space-between; gap: 8px; border: 2px solid var(--line); border-radius: 12px; padding: 6px 10px; }
+.tick .cost { width: 110px; padding: 8px; font-size: 15px; }
+.big { font-size: 28px; font-weight: 900; color: var(--green); margin: 8px 0; }
+
+footer { color: var(--muted); font-size: 15px; text-align: center; padding: 32px 16px; border-top: 2px solid var(--line); }
+footer a { color: var(--blue); font-weight: 800; text-decoration: none; margin: 0 8px; }
+
+@media (max-width: 640px) { .nav a:not(.btn) { display: none; } header.top { padding: 10px 16px; } }
+@media (max-width: 480px) { h1 { font-size: 28px; } .stop:nth-child(2) { margin-left: 60px; } }
+.fee-note { text-align: center; font-weight: 800; color: var(--green-dark); margin: 32px 16px 8px; }

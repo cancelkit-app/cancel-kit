@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help - Cancel Kit</title>
+<meta name="description" content="Answers to common questions about Cancel Kit, and a form to message a real person.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a class="logo" href="index.html"><img src="logo.svg" alt="" width="40" height="40">cancel kit</a><nav class="nav"><a href="guides.html">Guides</a><a class="btn ghost" href="start.html">Start</a></nav></header>
+<main class="wrap">
+<h1>How can we help?</h1>
+<div class="card">
+<p><b>Do you need my password?</b> Never. We need your name, the email on the account and your signed permission. We never ask for passwords or card numbers.</p>
+<p><b>How much does it cost?</b> $5 per subscription. One case is one company that we cancel and chase for you.</p>
+<p><b>What if the company doesn't cancel?</b> If the company hasn't confirmed your cancellation in writing within 30 days, you get your $5 back.</p>
+<p><b>How long does it take?</b> We send your cancellation the same day, and follow up on day 3, 7 and 14 if the company doesn't answer.</p>
+<p><b>Do you work outside the US?</b> Yes, wherever the company accepts cancellations by email or online form. Choose your country on the form so we follow the right rules.</p>
+<p><b>Can you cancel my gym?</b> Gyms that only accept a letter by mail are coming soon. Our free guides include a letter you can send yourself.</p>
+<p><b>I pay through Apple or Google. Can you cancel it?</b> Only you can cancel those, in your phone's subscription settings. Our guides show how.</p>
+<p><b>How do I check on my case?</b> We email you at every step. Your case number starts with CK-. Send it to us below for an update.</p>
+</div>
+<h2 id="contact">Message a real person</h2>
+<p>We answer by email, usually within a day.</p>
+<p class="card sent" id="sent" hidden>Thanks! We got your message and will email you soon.</p>
+<form name="contact" method="POST" action="/help.html?sent=1" data-netlify="true" netlify-honeypot="bot">
+<input type="hidden" name="form-name" value="contact">
+<p hidden><label>Leave this empty <input name="bot"></label></p>
+<label for="cname">Your name</label>
+<input id="cname" name="name" autocomplete="name" required>
+<label for="cemail">Your email</label>
+<input id="cemail" name="email" type="email" autocomplete="email" required>
+<label for="ccase">Case number, if you have one</label>
+<input id="ccase" name="caseId" placeholder="CK-...">
+<label for="cmsg">Your message</label>
+<textarea id="cmsg" name="message" rows="5" required></textarea>
+<p><button class="btn wide" type="submit">Send message</button></p>
+</form>
+</main>
+<footer>Cancel Kit <a href="guides.html">Guides</a><a href="help.html">Help</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></footer>
+<script src="site.js"></script>
+</body>
+</html>

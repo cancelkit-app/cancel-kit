@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start your cancellation - Cancel Kit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a class="logo" href="index.html"><img src="logo.svg" alt="" width="40" height="40">cancel kit</a><span class="small">3 quick steps</span></header>
+<main class="wrap">
+<div class="progress"><span id="bar"></span></div>
+<form name="case" id="caseForm" method="POST" data-netlify="true" netlify-honeypot="bot">
+<input type="hidden" name="form-name" value="case">
+<input type="hidden" name="caseId">
+<input type="hidden" name="authorization">
+<p hidden><label>Leave this empty <input name="bot"></label></p>
+
+<section class="step" data-step="1">
+<h1>What do you want to cancel?</h1>
+<label for="company">Company or app</label>
+<input id="company" name="company" placeholder="e.g. Adobe, HelloFresh, SiriusXM" autocomplete="off">
+<label for="cost">What it costs you (optional)</label>
+<input id="cost" name="cost" placeholder="e.g. $22.99 a month">
+<label for="paidVia">How do you pay for it?</label>
+<select id="paidVia" name="paidVia">
+<option value="direct">Card or PayPal, straight to the company</option>
+<option value="apple">Apple App Store (iPhone or iPad)</option>
+<option value="google">Google Play (Android)</option>
+</select>
+<label for="nextBill">Your next bill date (optional, so we can check you are not charged again)</label>
+<input id="nextBill" name="nextBill" type="date">
+</section>
+
+<section class="step" data-step="2">
+<h1>About you</h1>
+<label for="fullName">Your full name</label>
+<input id="fullName" name="fullName" autocomplete="name">
+<label for="email">Your email (we send updates here)</label>
+<input id="email" name="email" type="email" autocomplete="email">
+<label for="accountEmail">Email on that account, if different</label>
+<input id="accountEmail" name="accountEmail" type="email">
+<label for="country">Your country</label>
+<select id="country" name="country">
+<option value="">Choose your country</option>
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>Ireland</option>
+<option>Australia</option>
+<option>New Zealand</option>
+<option>Germany</option>
+<option>France</option>
+<option>Netherlands</option>
+<option>Spain</option>
+<option>Italy</option>
+<option>Poland</option>
+<option>Sweden</option>
+<option>Other</option>
+</select>
+<label for="region">State, province or region</label>
+<input id="region" name="region" placeholder="e.g. CA, Ontario or Bavaria">
+</section>
+
+<section class="step" data-step="3">
+<h1>Give us permission</h1>
+<div class="card" id="auth"></div>
+<label class="check"><input type="checkbox" name="agree"> I agree to the text above and to the <a href="terms.html">Terms</a>.</label>
+<label for="signature">Sign by typing your full name</label>
+<input id="signature" name="signature" autocomplete="off">
+</section>
+
+<p class="error" id="err"></p>
+<div class="row">
+<button type="button" class="btn ghost" id="back">Back</button>
+<button type="submit" class="btn" id="next">Continue</button>
+</div>
+</form>
+</main>
+<script src="start.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
