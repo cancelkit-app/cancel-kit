@@ -1,0 +1,2 @@
+# The default Netlify address sends visitors to the real domain (one public copy only).
+https://lucent-tapioca-04aa5b.netlify.app/* https://kitcancel.com/:splat 301!
