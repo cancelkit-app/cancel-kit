@@ -27,7 +27,12 @@
 <option value="direct">Card or PayPal, straight to the company</option>
 <option value="apple">Apple App Store (iPhone or iPad)</option>
 <option value="google">Google Play (Android)</option>
+<option value="other">Other</option>
 </select>
+<div id="paidOtherBox" hidden>
+<label for="paidOther">How do you pay? (e.g. phone bill, Amazon, bank transfer)</label>
+<input id="paidOther" name="paidOther" maxlength="60" autocomplete="off">
+</div>
 <label for="nextBill">Your next bill date (optional, so we can check you are not charged again)</label>
 <input id="nextBill" name="nextBill" type="date">
 </section>

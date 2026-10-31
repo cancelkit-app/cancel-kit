@@ -8,8 +8,14 @@ function looksLikeEmail(s) {
   return at > 0 && dot > at + 1 && dot < s.length - 1 && !s.includes(' ');
 }
 
+// "Other" payment method is free text: keep it short and plain (letters, numbers, basic punctuation only).
+function cleanText(s, max) {
+  return String(s || '').replace(/[^\p{L}\p{N} .,'&()\/+-]/gu, '').replace(/\s+/g, ' ').trim().replace(/^[+-]+\s*/, '').slice(0, max);
+}
+
 function validateStep(step, d) {
   if (step === 1 && (!d.company || d.company.trim().length < 2)) return 'Tell us which company to cancel.';
+  if (step === 1 && d.paidVia === 'other' && cleanText(d.paidOther, 60).length < 2) return 'Tell us how you pay for it.';
   if (step === 2) {
     if (!d.name || d.name.trim().split(' ').length < 2) return 'Please enter your full name.';
     if (!looksLikeEmail(d.email || '')) return 'Please enter a valid email.';
@@ -49,7 +55,7 @@ function encode(d) {
   return Object.keys(d).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(d[k])).join('&');
 }
 
-if (typeof module !== 'undefined') module.exports = { looksLikeEmail, validateStep, storeOnly, authorizationText, caseId, paymentUrl, encode, STEPS, PAYMENT_LINK };
+if (typeof module !== 'undefined') module.exports = { cleanText, looksLikeEmail, validateStep, storeOnly, authorizationText, caseId, paymentUrl, encode, STEPS, PAYMENT_LINK };
 
 if (typeof document !== 'undefined') {
   let step = 1;
@@ -57,7 +63,7 @@ if (typeof document !== 'undefined') {
   const field = n => form.elements[n];
   const $ = id => document.getElementById(id);
   const read = () => ({
-    company: field('company').value, cost: field('cost').value, paidVia: field('paidVia').value, nextBill: field('nextBill').value, name: field('fullName').value,
+    company: field('company').value, cost: field('cost').value, paidVia: field('paidVia').value, paidOther: field('paidVia').value === 'other' ? cleanText(field('paidOther').value, 60) : '', nextBill: field('nextBill').value, name: field('fullName').value,
     email: field('email').value, accountEmail: field('accountEmail').value, country: field('country').value, region: field('region').value,
     agree: field('agree').checked, signature: field('signature').value
   });
@@ -71,6 +77,7 @@ if (typeof document !== 'undefined') {
   };
   const asked = new URLSearchParams(location.search).get('company');
   if (asked) field('company').value = asked;
+  field('paidVia').onchange = () => { $('paidOtherBox').hidden = field('paidVia').value !== 'other'; };
   $('back').onclick = () => { if (step > 1) { step--; show(); } };
   form.onsubmit = async e => {
     e.preventDefault();
