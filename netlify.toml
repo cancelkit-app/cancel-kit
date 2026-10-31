@@ -1,0 +1,10 @@
+# Production (main) publishes the files as they are.
+[build]
+  publish = "."
+
+# Staging and preview copies: tell search engines to stay away.
+[context.branch-deploy]
+  command = "printf 'User-agent: *\nDisallow: /\n' > robots.txt && printf '/*\n  X-Robots-Tag: noindex, nofollow\n' >> _headers"
+
+[context.deploy-preview]
+  command = "printf 'User-agent: *\nDisallow: /\n' > robots.txt && printf '/*\n  X-Robots-Tag: noindex, nofollow\n' >> _headers"
