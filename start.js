@@ -91,7 +91,9 @@ if (typeof document !== 'undefined') {
     const payload = Object.assign({ 'form-name': 'case', caseId: id, authorization: authorizationText(d) }, d, { agree: 'yes', fullName: d.name });
     delete payload.name;
     try {
-      await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encode(payload) });
+      // Only send people to pay once Netlify has really saved the case.
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encode(payload) });
+      if (!res.ok) throw new Error('save failed ' + res.status);
     } catch (err) {
       $('err').textContent = 'Could not save your case. Please try again.';
       return;
