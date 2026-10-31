@@ -44,7 +44,7 @@ function authorizationText(d) {
 
 function caseId(now, rand) {
   const day = now.toISOString().slice(0, 10).split('-').join('');
-  return 'CK-' + day + '-' + Math.floor(rand * 46656).toString(36).toUpperCase().padStart(3, '0');
+  return 'CK-' + day + '-' + Math.floor(rand * 2176782336).toString(36).toUpperCase().padStart(6, '0');
 }
 
 function paymentUrl(link, id, email) {
@@ -87,7 +87,7 @@ if (typeof document !== 'undefined') {
     if (step === 1 && storeOnly(d)) { window.location.href = 'cancel-app-store.html'; return; }
     if (step < STEPS) { step++; show(); return; }
     $('bar').style.width = '100%';
-    const id = caseId(new Date(), Math.random());
+    const id = caseId(new Date(), crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296);
     const payload = Object.assign({ 'form-name': 'case', caseId: id, authorization: authorizationText(d) }, d, { agree: 'yes', fullName: d.name });
     delete payload.name;
     try {
