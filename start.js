@@ -98,6 +98,7 @@ if (typeof document !== 'undefined') {
       $('err').textContent = 'Could not save your case. Please try again.';
       return;
     }
+    try { sessionStorage.setItem('kcCase', id); } catch (e) {}
     window.location.href = paymentUrl(PAYMENT_LINK, id, d.email);
   };
   show();
