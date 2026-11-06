@@ -1,5 +1,5 @@
 // Kit Cancel (plan-013): the 3-step "lesson" form. Pure functions on top, browser wiring below.
-const PAYMENT_LINK = 'https://buy.stripe.com/test_3cI9AU3pM5QhfKff5xgw000';
+const PAYMENT_LINK = 'https://buy.stripe.com/28E4gz2FG9L01FLekm1wY00';
 const STEPS = 3;
 
 function looksLikeEmail(s) {
